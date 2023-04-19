@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useCallback } from "react";
 
 const apiURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
