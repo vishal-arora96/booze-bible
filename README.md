@@ -1,6 +1,6 @@
 # Booze Bible
 
-Cocktails Info App build using ReactJs, React Router, Global Context, React-Hooks - useContext,useState, and External Api
+Cocktails Info App build using ReactJs, React Router, Global Context, React-Hooks (useContext and useState) and External Cocktail Api
 
 ## Available Scripts
 
