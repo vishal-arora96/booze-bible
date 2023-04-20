@@ -6,7 +6,7 @@ const apiURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("s");
   const [cocktails, setCocktails] = useState([]);
 
@@ -40,7 +40,13 @@ const AppProvider = ({ children }) => {
   }, [searchTerm]);
 
   useEffect(() => {
-    fetchDrinks();
+    console.log("inside useEffect");
+    let timeoutId = setTimeout(() => {
+      fetchDrinks();
+    }, 500);
+    return function () {
+      clearTimeout(timeoutId);
+    };
   }, [searchTerm, fetchDrinks]);
 
   return (
@@ -51,6 +57,5 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
-
 
 export { AppContext, AppProvider };
